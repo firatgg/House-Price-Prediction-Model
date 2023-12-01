@@ -1,78 +1,29 @@
-# House Price Prediction Project
+# House Prices Prediction Project
 
-This project aims to predict house prices using machine learning models. The dataset includes various features such as numerical and categorical variables. The goal is to build a model that accurately predicts house prices.
+## Dataset
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Exploratory Data Analysis (EDA)](#eda)
-    - [General Picture](#general-picture)
-    - [Analysis of Categorical Variables](#analysis-of-categorical-variables)
-    - [Analysis of Numerical Variables](#analysis-of-numerical-variables)
-    - [Analysis of Target Variable](#analysis-of-target-variable)
-    - [Correlation Analysis](#correlation-analysis)
-3. [Feature Engineering](#feature-engineering)
-    - [Outlier Analysis](#outlier-analysis)
-    - [Missing Value Analysis](#missing-value-analysis)
-    - [Label Encoding & One-Hot Encoding](#label-encoding--one-hot-encoding)
-4. [Model Building](#model-building)
-    - [Separate Train and Test Data](#separate-train-and-test-data)
-    - [Build a Model](#build-a-model)
-    - [Log Transformation](#log-transformation)
-    - [Hyperparameter Optimization](#hyperparameter-optimization)
-    - [Feature Importance](#feature-importance)
-    - [Predictions and Submission](#predictions-and-submission)
+The dataset consists of residential homes in Ames, Iowa, with 79 explanatory variables. It is divided into two CSV files: `train` and `test`. In the test dataset, house prices are left blank, and the goal is to estimate these values.
 
-## Introduction
+You can access the dataset and competition page on Kaggle [here](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview/evaluation).
 
-Briefly introduce your project, its goals, and the dataset you're working with.
+## Requirements
 
-## EDA
-
-### General Picture
-
-Include insights from the general analysis of the dataset.
-
-### Analysis of Categorical Variables
-
-Discuss the analysis of categorical variables and any patterns observed.
-
-### Analysis of Numerical Variables
-
-Discuss the analysis of numerical variables, including visualizations.
-
-### Analysis of Target Variable
-
-Analyze the target variable (SalePrice) and its distribution.
-
-### Correlation Analysis
-
-Discuss correlations among numerical variables.
-
-## Feature Engineering
-
-Discuss the steps taken for outlier analysis, missing value analysis, and the creation of new features.
-
-## Model Building
-
-### Separate Train and Test Data
-
-Describe how you split the data into training and testing sets.
-
-### Build a Model
-
-Discuss the choice of models and their initial performance.
-
-### Log Transformation
-
-Explain the log transformation applied and its impact on model performance.
-
-### Hyperparameter Optimization
-
-Discuss any hyperparameter optimization performed on the chosen model.
-
-### Feature Importance
-
-Present the ranking of features based on their importance in the model.
-
-
-
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+from catboost import CatBoostRegressor
+from lightgbm import LGBMRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
+from sklearn.exceptions import ConvergenceWarning
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR
+from sklearn.tree import DecisionTreeRegressor
+from xgboost import XGBRegressor
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
