@@ -74,15 +74,5 @@ Discuss any hyperparameter optimization performed on the chosen model.
 
 Present the ranking of features based on their importance in the model.
 
-### Predictions and Submission
 
-Discuss the final predictions and the creation of a submission file for Kaggle.
-
-## Acknowledgments
-
-Give credit to any libraries, datasets, or tutorials you used in your project.
-
-## License
-
-Specify the license under which your project is shared.
 
